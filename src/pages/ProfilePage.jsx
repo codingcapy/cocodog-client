@@ -35,7 +35,7 @@ export default function ProfilePage() {
         toggleEditMode();
         setMessage("Password updated successfully!")
         if (res?.data.success) {
-            navigate(`/users/${userId}`);
+            navigate(`/cocodog-client/users/${userId}`);
         }
     }
 
@@ -54,7 +54,7 @@ export default function ProfilePage() {
             <p>{message}</p>
             <h2 className="py-5 text-2xl text-slate-700 font-medium">Your Posts</h2>
             {data.userPosts.length === 0 ? <p>You haven't posted anything yet!</p> : data.userPosts.map((post) => <div key={post.id} className="py-3">
-                <Link to={`/posts/${post.id.toString()}`} className="">
+                <Link to={`/cocodog-client/posts/${post.id.toString()}`} className="">
                     <p>Posted by <strong>{post.username}</strong> on {post.date}</p>
                     <h3>{post.title}</h3>
                     <p>{post.content}</p>
@@ -62,14 +62,14 @@ export default function ProfilePage() {
             </div>)}
             <h2 className="py-5 text-2xl text-slate-700 font-medium">Your Comments</h2>
             {data.userComments.length === 0 ? <p>You haven't added any comments yet!</p> : data.userComments.map((comment) => <div key={comment.id} className="my-3">
-                <Link to={`/posts/${comment.postId.toString()}`} className="">
+                <Link to={`/cocodog-client/cocodog-client/posts/${comment.postId.toString()}`} className="">
                     <p><strong>{comment.username}</strong> {comment.date}</p>
                     <p>{comment.content}</p>
                 </Link>
             </div>)}
             <h2 className="py-5 text-2xl text-slate-700 font-medium">Your Replies</h2>
             {data.userReplies.length === 0 ? <p>You haven't added any replies yet!</p> : data.userReplies.map((reply) => <div key={reply.id} className="my-3">
-                <Link to={`/posts/${reply.postId.toString()}`} className="">
+                <Link to={`/cocodog-client/cocodog-client/posts/${reply.postId.toString()}`} className="">
                     <p><strong>{reply.username}</strong> {reply.date}</p>
                     <p>{reply.content}</p>
                 </Link>
